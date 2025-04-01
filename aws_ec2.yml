@@ -1,11 +1,9 @@
 plugin: amazon.aws.aws_ec2
 regions:
-  - us-east-1  # Update with your AWS region
+  - us-east-1  # Ensure this is the correct region for your instance
 filters:
-  tag:Name: ansible-spacelift  # Filter instances by the Name tag
+  tag:Name: ansible-spacelift  # Use the correct instance tag to match your EC2 instance
   instance-state-name: running  # Only target running instances
 keyed_groups:
   - key: tags.Name
     prefix: instance  # Groups instances by their Name tag
-
-ssh_args: "-i /tmp/private-key.pem"  # Set the path to the private key in Spacelift container
