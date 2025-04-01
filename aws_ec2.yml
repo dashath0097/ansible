@@ -1,9 +1,9 @@
 plugin: amazon.aws.aws_ec2
 regions:
-  - us-east-1  # Ensure this is the correct region for your instance
+  - us-east-1  # Replace with your AWS region
 filters:
-  tag:Name: ansible-spacelift  # Use the correct instance tag to match your EC2 instance
-  instance-state-name: running  # Only target running instances
+  tag:Name: ansible-spacelift  # Filters instances by the 'Name' tag matching 'ansible-spacelift'
+  instance-state-name: running  # Only targets running instances
 keyed_groups:
   - key: tags.Name
-    prefix: instance  # Groups instances by their Name tag
+    prefix: instance
