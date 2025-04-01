@@ -1,5 +1,6 @@
+---
 - name: Install Apache Web Server
-  hosts: all
+  hosts: "tag_Name_ansible-spacelift"  # Group from dynamic inventory
   become: true
   tasks:
     - name: Install Apache (Ubuntu)
